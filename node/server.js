@@ -1,18 +1,17 @@
 'use strict';
 
-var os = require('os');
-var hostname = os.hostname();
-
 const express = require('express');
 
-// 상수
+const os = require('os');
+var hostname = os.hostname();
+
 const PORT = 8000;
 const HOST = '0.0.0.0';
 
-// 앱
+// App 
 const app = express();
 app.get('/', (req, res) => {
-  res.send(hostname);
+  res.send('<h1>' + 'hostname: ' + hostname + '</h1>');
 });
 
 app.listen(PORT, HOST);
